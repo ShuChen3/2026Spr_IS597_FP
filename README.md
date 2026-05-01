@@ -1,31 +1,32 @@
-# 2026Spr_projects
-Forks from here created before May 2026 are student projects.
-
-Each project from this semester is a public fork linked from this repository.  This is just one of the many assignments students worked on for the course, but this is the *only* one they are permitted to publish openly.
-
-## Final Project Expectations:
-
-You have considerable flexibility about specifics and you will publish your project openly (as a fork from here) to allow making it part of your portfolio if you choose.  You may work alone or in a team of two students. 
-
-Regardless of topic, it must involve notable amounts of original work of your own, though it can of course use existing libraries or be inspired by or built upon some other published work(s). 
-
-PLAGIARISM IS NOT ACCEPTABLE. From the first commit through all production of documentation and code, it must be clear which, if any, parts of the project were based on or duplicated from any other source(s) all of which must be cited. Use of generative AI systems must be cited for the same reasons, typically by documenting prompts used.  This should be so specific that an evaluator can determine which lines of code are original work and which aren't. Same for all written narrative, documentation, images, significant algorithms, etc.
-
-## Project Types you may choose:
-
-(Making original _variations_ of puzzles and games isn't as difficult as it may seem -- we have already done this in class. _Though admittedly, making *good* game variations -- that are well-balanced, strategically interesting, with good replay value_ can take expertise or luck and play-testing with revisions.  Such balanced elegance is desirable but might not be achievable here, given the short time you have.)
-
-1. Devise your own new _original_ type of logic puzzle or an _original variation_ of existing puzzle type. Like with previous homework, your program should be able to randomly generate new puzzles of your type and automatically verify that all puzzles generated comply with the standard meta-rule that only one valid solution exists. It needs to output the _unsolved_ puzzles in a way that a human can print or view them conveniently to try solving them and to somehow output (to file?) or display the solution for each puzzle when requested, so as not to spoil the challenge. An interactive UI to "play" the puzzles interactively is very nice but *not* required. 
-
-2. OR develop an AI game player for an _original variation_ of some existing strategy game.  If you do this, it needs to be set up so it can either play computer-vs-computer and/or against human players with a reasonable text or graphical UI. 2B. If two teams want to independently develop AI players for the same type of game variant as each other (but using different algorithms, strategies, and/or data structures) so they can compete, that is okay.  A sub-variation is to enable this game type on our course game server, discuss with the instructor if this is of interest.
+# 2026Spr_projects - Rummikub Endgame Puzzle Generator and Solver
+In this project I tried to build a game environment for creating a rummikub end game
+puzzle for player to solve.
 
 
-## Deliverables and other Requirements:
+Instead of using only the standard Rummikub rules, I added two original types of special 
+tiles to make the game more challenging and interesting. The first one is the **Rainbow King**, 
+which can be used in a run to connect tiles with different colors and fill the missing middle value. 
+The second one is the **Prism Joker**, which can replace any value tile of one fixed color.
 
-* Have some fun!
-* In your own fork, please replace this README.md file's contents with a good introduction to your own project. 
-* Targeted Algorithm Analysis:  Regardless of which option you choose, you need to _describe the performance characteristics of some critical parts of your program and explain why you chose the data structures and core algorithm(s) you did_. Examples, if you chose Type #1, what's the Big-O, Big-Theta, or Big-Omega run-time complexity of your puzzle solver? Or the puzzle generator? If you're doing Type #2 and using minimax or negamax, what's the complexity of your _heuristic evaluation function_? ...and of the function that finds all legal moves from a game state? 
-* Performance Measurement: Supplement the analysis above with run-time measurements of multiple iterations of the game or puzzles as discussed in class. Sample results from a run-time profiler is a good idea at least as part of the measurements.
-* If your team has more than one student, we expect everyone to make substantial git commits, with all members working on the programming. In addition, your README documentation should include a summary of how you shared the work.
-* Live in-class presentation & demonstration of your work.
+The current generator and solver both have high computational complexity, because the problem itself 
+is a combinatorial search problem. The program uses graph-based candidate generation and backtracking-based 
+solving, so the worst-case time complexity can still be exponential.
+
+
+# Future improvment
+1.Enable players to customize more game rules through parameters, such as the number of tile colors, 
+the range of tile values, and special tile rules.
+
+2.Improve the puzzle generator so that it can create more diverse puzzles, including melds with multiple 
+special tiles.
+
+3.Optimize or experiment with new algorithms to reduce program resource consumption.
+
+
+# AI Usage Statement
+In this project, I utilized AI to assist us in organizing our design ideas,
+implementing certain specific programming syntax, and identifying and resolving errors.
+
+
+
 
