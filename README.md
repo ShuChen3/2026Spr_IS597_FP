@@ -12,6 +12,17 @@ The current generator and solver both have high computational complexity, becaus
 is a combinatorial search problem. The program uses graph-based candidate generation and backtracking-based 
 solving, so the worst-case time complexity can still be exponential.
 
+After running test.py in profile mode, I found that the most frequently called function is _tile_matches_requirement(). 
+The functions that take the most total running time are backtrack() in solver.py, dfs() in candidate_generator.py, 
+and _find_run_assignment() in validator.py.
+
+The solver needs to search through many possible combinations of candidate melds, so the backtracking function 
+becomes one of the most time-consuming parts. The candidate generator also uses DFS to explore possible run paths 
+in the graph, which can create many candidate combinations. In addition, run validation is more complex than 
+group validation because it needs to check possible start values, colors, Joker assignments, Prism Joker assignments, 
+and Rainbow King placement. Therefore, _find_run_assignment() and _tile_matches_requirement() are called many times 
+during the validation process.
+
 
 # Future improvment
 1.Enable players to customize more game rules through parameters, such as the number of tile colors, 
@@ -26,6 +37,7 @@ special tiles.
 # AI Usage Statement
 In this project, I utilized AI to assist us in organizing our design ideas,
 implementing certain specific programming syntax, and identifying and resolving errors.
+https://chatgpt.com/share/69f6a266-1204-83ea-ae90-3c55869ba58d
 
 
 
